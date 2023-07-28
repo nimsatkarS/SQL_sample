@@ -1,5 +1,4 @@
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
 mysql> show databases;
 +--------------------+
 | Database           |
@@ -15,7 +14,7 @@ mysql> show databases;
 | testdb             |
 +--------------------+
 9 rows in set (0.00 sec)
-
+```
 mysql> use data;
 Database changed
 mysql> create table youtube(ChainelName varchar(20),Suscriber int(10),Videos int(10),TotalLike int(15),Playlist int(10));
@@ -27,7 +26,8 @@ mysql> ^C
 mysql> insert into youtube value('Code With Harry','1.3','200','12','32'),('MrIndian Hacker','4','287','56','20'),('Carry Minety','1.5','340','6','7'),('Asmr','5','400','50','43');
 Query OK, 4 rows affected (0.01 sec)
 Records: 4  Duplicates: 0  Warnings: 0
-
+```sql
+```
 mysql> select * from youtube;
 +-----------------+-----------+--------+-----------+----------+
 | ChainelName     | Suscriber | Videos | TotalLike | Playlist |
@@ -38,7 +38,8 @@ mysql> select * from youtube;
 | Asmr            |         5 |    400 |        50 |       43 |
 +-----------------+-----------+--------+-----------+----------+
 4 rows in set (0.00 sec)
-
+```sql
+```
 mysql> select suscriber from youtube;
 +-----------+
 | suscriber |
@@ -78,7 +79,8 @@ mysql> select * from youtube where videos>200;
 | Asmr            |         5 |    400 |        50 |       43 |
 +-----------------+-----------+--------+-----------+----------+
 3 rows in set (0.01 sec)
-
+```sql
+```
 mysql> select min(TotalLike)as smallestTotalLike from youtube;
 +-------------------+
 | smallestTotalLike |
@@ -86,9 +88,10 @@ mysql> select min(TotalLike)as smallestTotalLike from youtube;
 |                 6 |
 +-------------------+
 1 row in set (0.01 sec)
-
+```sql
 mysql> select max(suscriber) from youtube where biggestSuscriber;
 ERROR 1054 (42S22): Unknown column 'biggestSuscriber' in 'where clause'
+```
 mysql> select max(suscriber)as biggestSuscriber from youtube;
 +------------------+
 | biggestSuscriber |
@@ -104,8 +107,8 @@ mysql> select max(suscriber)as mideSuscriber from youtube;
 |             5 |
 +---------------+
 1 row in set (0.00 sec)
-
-
+```sql
+```
 mysql>  select * from youtube where ChainelName='Asmr' or Suscriber='4';
 +-----------------+-----------+--------+-----------+----------+
 | ChainelName     | Suscriber | Videos | TotalLike | Playlist |
@@ -134,3 +137,4 @@ mysql> select * from youtube order by videos,suscriber desc;
 | Asmr            |         5 |    400 |        50 |       43 |
 +-----------------+-----------+--------+-----------+----------+
 4 rows in set (0.00 sec)
+```sql
