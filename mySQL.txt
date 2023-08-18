@@ -9,7 +9,7 @@ affiliates. Other names may be trademarks of their respective
 owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
+```sql
 mysql> show databases;
 +--------------------+
 | Database           |
@@ -40,7 +40,7 @@ mysql> desc Result;
 | Pursentage  | int         | YES  |     | NULL    |       |
 +-------------+-------------+------+-----+---------+-------+
 4 rows in set (0.01 sec)
-
+```
 mysql> insert into Result values('Pankaj','64','Sub-7','68%'),('Kartik','75','Sub-5','78%'),('Aniket','12','Sub-8','55%'),('Krishna','23','Sub-7','83%'),('Jays','42','Sub-5','69%'),('Badal','54','Sub-8','49%');
 ERROR 1265 (01000): Data truncated for column 'Pursentage' at row 1
 mysql> ('Pankaj','64','Sub-7',68),('Kartik','75','Sub-5',78),('Aniket','12','Sub-8',55),('Krishna','23','Sub-7',83),('Jays','42','Sub-5',69),('Badal','54','
@@ -55,7 +55,7 @@ mysql>  insert into Result values('Pankaj','64','Sub-7','68'),('Kartik','75','Su
     '> al','54','Sub-8','49');
 Query OK, 6 rows affected (0.01 sec)
 Records: 6  Duplicates: 0  Warnings: 0
-
+```sql
 mysql> desc Result;
 +-------------+-------------+------+-----+---------+-------+
 | Field       | Type        | Null | Key | Default | Extra |
@@ -66,7 +66,8 @@ mysql> desc Result;
 | Pursentage  | int         | YES  |     | NULL    |       |
 +-------------+-------------+------+-----+---------+-------+
 4 rows in set (0.00 sec)
-
+```
+```sql
 mysql> select * from Result;
 +-------------+--------+---------+------------+
 | StudentName | RollNo | Subject | Pursentage |
@@ -80,7 +81,8 @@ mysql> select * from Result;
 al      |     54 | Sub-8   |         49 |
 +-------------+--------+---------+------------+
 6 rows in set (0.00 sec)
-
+```
+```sql
 mysql> select RollNo from Result;
 +--------+
 | RollNo |
@@ -93,9 +95,10 @@ mysql> select RollNo from Result;
 |     54 |
 +--------+
 6 rows in set (0.00 sec)
-
+```
 mysql> select Puresntage from Result;
 ERROR 1054 (42S22): Unknown column 'Puresntage' in 'field list'
+```sql
 mysql> select Pursentage from Result;
 +------------+
 | Pursentage |
@@ -108,7 +111,8 @@ mysql> select Pursentage from Result;
 |         49 |
 +------------+
 6 rows in set (0.00 sec)
-
+```
+```sql
 mysql> select StudentName from Result;
 +-------------+
 | StudentName |
@@ -122,7 +126,7 @@ mysql> select StudentName from Result;
 al      |
 +-------------+
 6 rows in set (0.00 sec)
-
+```
 mysql> SELECT DISTINCT Subject FROM Ressult;
 ERROR 1146 (42S02): Table 'mysql.ressult' doesn't exist
 mysql> select 12 * from Result;
@@ -136,6 +140,7 @@ ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that 
 mysql> SELECT * FROM Customers
     -> ^C
 mysql> ^C
+```sql
 mysql> select * from Result
     -> where RollNO=12;
 +-------------+--------+---------+------------+
@@ -144,7 +149,7 @@ mysql> select * from Result
 | Aniket      |     12 | Sub-8   |         55 |
 +-------------+--------+---------+------------+
 1 row in set (0.00 sec)
-
+```
 mysql> seclect * from Result where Pursentage=49;
 ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'seclect * from Result where Pursentage=49' at line 1
 mysql>  select * from Result
@@ -153,6 +158,7 @@ ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that 
 mysql>  select * from Result
     ->     -> where RollNo=42;
 ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> where RollNo=42' at line 2
+```sql
 mysql> select * from Result  where RollNO=42;
 +-------------+--------+---------+------------+
 | StudentName | RollNo | Subject | Pursentage |
@@ -160,9 +166,10 @@ mysql> select * from Result  where RollNO=42;
 | Jays        |     42 | Sub-5   |         69 |
 +-------------+--------+---------+------------+
 1 row in set (0.00 sec)
-
+```
 mysql> select * from Result where RollNO=64,54;
 ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',54' at line 1
+```sql
 mysql>  select * from Result where RollNO=64;
 +-------------+--------+---------+------------+
 | StudentName | RollNo | Subject | Pursentage |
@@ -170,5 +177,5 @@ mysql>  select * from Result where RollNO=64;
 | Pankaj      |     64 | Sub-7   |         68 |
 +-------------+--------+---------+------------+
 1 row in set (0.00 sec)
-
+```
 mysql>
