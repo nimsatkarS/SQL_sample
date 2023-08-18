@@ -1,3 +1,4 @@
+
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 9
 Server version: 8.0.32 MySQL Community Server - GPL
