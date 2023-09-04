@@ -45,11 +45,12 @@ mysql> desc ithub;
 | contact | int         | YES  |     | NULL    |       |
 +---------+-------------+------+-----+---------+-------+
 5 rows in set (0.01 sec)
-
+```sql
 mysql> insert into ithub values('sanket','python','5000','3000','9823415986'),('mayur','java','4000','2000','9874563210'),('rohit','c/c++','3500','1000','9632587419'),('mahesh','c#','8000','000','7538691248'),('dheraj','webd','1200','6000','9512364785');
 ERROR 1264 (22003): Out of range value for column 'contact' at row 1
 mysql> insert into ithub values('sanket','python','5000','3000','9823415986'),('mayur','java','4000','2000','9874563210'),('rohit','c/c++','3500','1000','9632587419'),('mahesh','c#','8000','000','7538691248'),('dheraj','webd','1200','6000','9512364785');
 ERROR 1264 (22003): Out of range value for column 'contact' at row 1
+```
 mysql> insert into ithub values('sanket','python','5000','3000','982341'),('mayur','java','4000','2000','987456'),('rohit','c/c++','3500','1000','963258'),('mahesh','c#','8000','000','753869'),('dheraj','webd','1200','6000','951236');
 Query OK, 5 rows affected (0.01 sec)
 Records: 5  Duplicates: 0  Warnings: 0
@@ -65,11 +66,12 @@ mysql> desc ithub;
 | contact | int         | YES  |     | NULL    |       |
 +---------+-------------+------+-----+---------+-------+
 5 rows in set (0.00 sec)
-
+```sql
 mysql> show table * from ithub;
 ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from ithub' at line 1
 mysql> show table from * ithub;
 ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from * ithub' at line 1
+```
 mysql> select * from ithub;
 +--------+--------+------+------+---------+
 | name   | corse  | fees | paid | contact |
@@ -93,9 +95,10 @@ mysql> select corse,fees from ithub;
 | webd   | 1200 |
 +--------+------+
 5 rows in set (0.00 sec)
-
+```sql
 mysql> select name,contact,corse,from ithub;
 ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from ithub' at line 1
+```
 mysql> select name,contact from ithub;
 +--------+---------+
 | name   | contact |
@@ -135,12 +138,12 @@ mysql> select count(distinct contact) from ithub;
 |                       5 |
 +-------------------------+
 1 row in set (0.00 sec)
-
+```sql
 mysql> select count(*) as distinctcontact from(select distinct name from ithub);
 ERROR 1248 (42000): Every derived table must have its own alias
 mysql> select * from ithub where corse;
 Empty set, 4 warnings (0.01 sec)
-
+```
 mysql> select * from ithub where corse=1;
 Empty set, 4 warnings (0.00 sec)
 
@@ -167,8 +170,8 @@ mysql> select * from ithub order by paid,fees;
 | dheraj | webd   | 1200 | 6000 |  951236 |
 +--------+--------+------+------+---------+
 5 rows in set (0.00 sec)
-
+```sql
 mysql> select * from ithub where name = 'sanket' and corse = 'python' and fees > 5000;
 Empty set (0.00 sec)
 
-mysql>
+mysql>  ```
